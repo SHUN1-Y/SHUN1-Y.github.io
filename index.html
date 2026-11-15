@@ -3,204 +3,348 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SHUN1-Y | Business Portfolio</title>
-
+<title>まだ知らない自分と、未来へ。</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+:root {
+  --cream: #fffaf0;
+  --yellow: #ffdf83;
+  --orange: #f3a66c;
+  --brown: #66503e;
+  --green: #9eae8b;
+  --pink: #f6d5c6;
 }
-
-body{
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-    line-height:1.7;
-    color:#333;
-    background:#f8f9fa;
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--brown);
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 2;
 }
-
-header{
-    background:#1f2937;
-    color:white;
-    text-align:center;
-    padding:80px 20px;
+a { color: inherit; text-decoration: none; }
+.container { width: min(1080px, 88%); margin: auto; }
+header {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6%;
+  background: rgba(255,250,240,.92);
 }
-
-header h1{
-    font-size:3rem;
-    margin-bottom:10px;
+.logo {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 20px;
+  letter-spacing: .12em;
 }
-
-header p{
-    font-size:1.2rem;
-    opacity:0.9;
+nav { display: flex; gap: 30px; font-size: 12px; }
+.hero {
+  min-height: 650px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: 90px 20px;
+  background:
+    radial-gradient(ellipse at 15% 25%, #ffe9ad 0%, transparent 35%),
+    radial-gradient(ellipse at 85% 65%, #f9d9c9 0%, transparent 35%),
+    linear-gradient(135deg,#fffaf0,#fff1d1);
 }
-
-.container{
-    max-width:1000px;
-    margin:auto;
-    padding:40px 20px;
+.hero::before, .hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(2px);
 }
-
-section{
-    background:white;
-    padding:40px;
-    margin-bottom:30px;
-    border-radius:12px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+.hero::before {
+  width: 230px; height: 230px;
+  background: #ffe4a3;
+  opacity: .5; top: 8%; right: 7%;
 }
-
-h2{
-    margin-bottom:20px;
-    color:#1f2937;
+.hero::after {
+  width: 170px; height: 170px;
+  background: #f4cdbb;
+  opacity: .45; bottom: 4%; left: 7%;
 }
-
-.service-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+.hero-content { position: relative; z-index: 1; }
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: .25em;
+  color: #a7865b;
 }
-
-.card{
-    border:1px solid #ddd;
-    border-radius:10px;
-    padding:20px;
+h1 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(32px,5.5vw,58px);
+  font-weight: 500;
+  line-height: 1.65;
+  letter-spacing: .07em;
+  margin: 24px 0;
 }
-
-.card h3{
-    margin-bottom:10px;
+.hero p { font-size: 15px; }
+.button {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 13px 38px;
+  background: #eeb978;
+  color: white;
+  border-radius: 50px;
+  font-size: 13px;
+  transition: .3s;
 }
-
-.contact{
-    text-align:center;
+.button:hover { transform: translateY(-3px); background: #df9e62; }
+.book-illustration {
+  margin: 48px auto 0;
+  width: 180px;
+  height: 115px;
+  position: relative;
+  filter: drop-shadow(0 12px 12px #b58b5540);
 }
-
-.button{
-    display:inline-block;
-    background:#2563eb;
-    color:white;
-    text-decoration:none;
-    padding:12px 24px;
-    border-radius:8px;
-    margin:5px;
+.book {
+  position: absolute;
+  width: 90px; height: 105px;
+  top: 5px;
+  background: #f5d18c;
+  border-radius: 5px 12px 12px 5px;
+  transform: skewY(-7deg);
 }
-
-.button:hover{
-    opacity:0.9;
+.book.left {
+  left: 0;
+  transform: skewY(7deg);
+  background: #fff0c9;
 }
-
-.social-links{
-    margin-top:20px;
+.book.right { right: 0; background: #e9ae77; }
+.book::after {
+  content: "✦";
+  display: grid;
+  place-items: center;
+  height: 100%;
+  font-size: 25px;
+  color: white;
 }
-
-.social-links a{
-    text-decoration:none;
-    margin:0 10px;
-    color:#2563eb;
-    font-weight:bold;
+section { padding: 110px 0; }
+.section-label {
+  font-size: 11px;
+  letter-spacing: .25em;
+  color: #c28d5c;
+  text-align: center;
 }
-
-footer{
-    text-align:center;
-    padding:30px;
-    color:#666;
+h2 {
+  font-family: 'Noto Serif JP', serif;
+  text-align: center;
+  font-weight: 500;
+  font-size: clamp(25px,3.5vw,37px);
+  line-height: 1.7;
+  margin: 14px 0 30px;
+}
+.intro { text-align: center; }
+.intro p {
+  max-width: 650px;
+  margin: auto;
+  font-size: 14px;
+  line-height: 2.4;
+}
+.highlight {
+  background: #fff2d6;
+  padding: 100px 0;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 22px;
+  margin-top: 50px;
+}
+.card {
+  padding: 35px 25px;
+  background: #fffdf7;
+  border-radius: 18px;
+  text-align: center;
+}
+.card .symbol {
+  font-size: 34px;
+  margin-bottom: 14px;
+}
+.card h3 {
+  font-family: 'Noto Serif JP',serif;
+  font-size: 19px;
+  font-weight: 500;
+}
+.card p { font-size: 13px; line-height: 2.1; }
+.story {
+  background: #f6eee1;
+  text-align: center;
+}
+.story-inner { max-width: 680px; margin: auto; }
+.story p {
+  font-size: 14px;
+  line-height: 2.5;
+  margin: 30px 0;
+}
+.book-section { text-align: center; }
+.book-cover {
+  width: 210px;
+  height: 280px;
+  margin: 40px auto;
+  border-radius: 5px 15px 15px 5px;
+  background: linear-gradient(145deg,#f6d88e,#efb77e);
+  box-shadow: 12px 15px 30px #aa855233;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'Noto Serif JP',serif;
+  letter-spacing: .15em;
+}
+.book-cover strong { font-size: 32px; font-weight: 500; }
+.book-cover span { font-size: 13px; margin-top: 15px; }
+.book-section p {
+  max-width: 620px;
+  margin: auto;
+  font-size: 14px;
+}
+.future {
+  text-align: center;
+  background: linear-gradient(140deg,#ffedbd,#f8d9c9);
+}
+.future p { font-size: 14px; }
+footer {
+  text-align: center;
+  padding: 40px;
+  font-size: 11px;
+  color: #9a816a;
+  background: #fffaf0;
+}
+@media(max-width:700px) {
+  header { height: 65px; }
+  nav { gap: 12px; font-size: 10px; }
+  .hero { min-height: 580px; }
+  section { padding: 75px 0; }
+  .cards { grid-template-columns: 1fr; }
 }
 </style>
 </head>
-
 <body>
 
 <header>
-    <h1>SHUN1-Y</h1>
-    <p>システム開発 / DX支援 / ITコンサルティング</p>
+  <div class="logo">AVATAR</div>
+  <nav>
+    <a href="#concept">CONCEPT</a>
+    <a href="#about">ABOUT</a>
+    <a href="#avatar">AVATAR</a>
+  </nav>
 </header>
 
-<div class="container">
+<main>
+<section class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">A NEW JOURNEY BEGINS</div>
+    <h1>まだ知らない自分と、<br>まだ知らない未来へ。</h1>
+    <p>
+      自分を知ることから、人生はもっと面白くなる。<br>
+      あなたの中にある可能性を、一緒に見つけよう。
+    </p>
+    <a href="#concept" class="button">この世界をもっと知る</a>
+    <div class="book-illustration">
+      <div class="book left"></div>
+      <div class="book right"></div>
+    </div>
+  </div>
+</section>
 
-    <section>
-        <h2>事業概要</h2>
+<section id="concept" class="intro">
+  <div class="container">
+    <div class="section-label">A LITTLE DISCOVERY</div>
+    <h2>あなたは、自分のことを<br>どれくらい知っていますか？</h2>
+    <p>
+      本当はやってみたかったこと。<br>
+      まだ気づいていない自分の魅力。<br>
+      これから経験してみたい、新しい世界。<br><br>
+      自分の可能性は、思っているよりも<br>
+      ずっと広いのかもしれません。
+    </p>
+  </div>
+</section>
 
-        <p>
-            業務改善・システム開発・IT活用支援を中心に、
-            お客様の課題解決をサポートしています。
-        </p>
-    </section>
+<section class="highlight">
+  <div class="container">
+    <div class="section-label">DISCOVER YOURSELF</div>
+    <h2>自分を知ることから、<br>新しい世界が広がる。</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="symbol">☀</div>
+        <h3>自分を知る</h3>
+        <p>まだ知らなかった自分の魅力や可能性に出会う。</p>
+      </div>
+      <div class="card">
+        <div class="symbol">✿</div>
+        <h3>自由に想像する</h3>
+        <p>どんな自分になりたい？どんな経験をしてみたい？自由に思い描く。</p>
+      </div>
+      <div class="card">
+        <div class="symbol">♡</div>
+        <h3>人生を楽しむ</h3>
+        <p>自分らしい未来を創りながら、毎日をもっと楽しんでいく。</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section>
-        <h2>提供サービス</h2>
+<section class="story" id="about">
+  <div class="container story-inner">
+    <div class="section-label">MY THOUGHTS</div>
+    <h2>人生は、もっと自由でいい。</h2>
+    <p>
+      こうあるべき。<br>
+      自分にはできない。<br>
+      そんな思い込みを少し手放してみたら、<br>
+      目の前の世界が変わるかもしれない。<br><br>
+      誰かと比べるのではなく、自分の人生を楽しむ。<br>
+      自分の可能性を、自分で決めつけない。<br><br>
+      そんなきっかけを届けたいと思っています。
+    </p>
+    <a href="#avatar" class="button">私たちの活動について</a>
+  </div>
+</section>
 
-        <div class="service-grid">
+<section class="book-section" id="avatar">
+  <div class="container">
+    <div class="section-label">MEET AVATAR</div>
+    <h2>新しい自分に出会うための<br>小さなきっかけ。</h2>
+    <div class="book-cover">
+      <span>自分の可能性を広げる</span>
+      <strong>AVATAR</strong>
+      <span>NEW DISCOVERY</span>
+    </div>
+    <p>
+      「アバター」は、自分自身を知り、<br>
+      新しい可能性を発見するための本・教材です。<br><br>
+      自分が本当に経験してみたいことは何だろう？<br>
+      どんな未来を創っていきたいだろう？<br><br>
+      学びながら、自分だけの答えを見つけていきませんか。
+    </p>
+    <a href="#" class="button">アバターについて詳しく見る</a>
+  </div>
+</section>
 
-            <div class="card">
-                <h3>Webシステム開発</h3>
-                <p>
-                    業務効率化や顧客管理など、
-                    お客様の要件に合わせたシステムを開発します。
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>業務改善支援</h3>
-                <p>
-                    Excel運用や紙ベースの業務を見直し、
-                    効率的な運用を提案します。
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>ITコンサルティング</h3>
-                <p>
-                    システム導入やDX推進について
-                    幅広くご相談いただけます。
-                </p>
-            </div>
-
-        </div>
-    </section>
-
-    <section>
-        <h2>プロフィール</h2>
-
-        <p>
-            エンジニアとしてシステム開発に従事。
-            業務システム、Webアプリケーション開発、
-            業務改善支援を中心に活動しています。
-        </p>
-    </section>
-
-    <section class="contact">
-
-        <h2>お問い合わせ</h2>
-
-        <p>
-            ご相談やご依頼はお気軽にご連絡ください。
-        </p>
-
-        <br>
-
-        <a href="mailto:k010c1378@gmail.com" class="button">
-            メールで問い合わせ
-        </a>
-
-        <div class="social-links">
-
-            <a href="https://www.facebook.com/share/1DDFxTZDTb/?mibextid=wwXIfr" target="_blank">
-                Facebook
-            </a>
-
-            <a href="https://www.instagram.com/your-account" target="_blank">
-                Instagram
-            </a>
-
-        </div>
-
-    </section>
-
-</div>
+<section class="future">
+  <div class="container">
+    <div class="section-label">YOUR FUTURE</div>
+    <h2>これからの人生に、<br>もっとワクワクを。</h2>
+    <p>
+      まだ知らない自分に出会うこと。<br>
+      まだ経験したことのない世界を創ること。<br><br>
+      あなたの人生は、あなたが自由に描いていい。
+    </p>
+    <a href="#avatar" class="button">新しい一歩を見つける</a>
+  </div>
+</section>
+</main>
 
 <footer>
-    © 2026 SHUN1-Y
+  AVATAR — Discover your possibilities.<br>
+  © AVATAR
 </footer>
-
 </body>
 </html>
